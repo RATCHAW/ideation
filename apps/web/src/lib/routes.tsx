@@ -1,15 +1,18 @@
+import { Home } from "@/components/pages/home";
 import RootLayout from "@/components/templates/root-layout";
-import { RouteObject } from "react-router";
-
+import type { RouteObject } from "react-router";
 
 const routes: RouteObject[] = [
-  {
-    path: "/",
-    element: (
-        <RootLayout />
-    ),
-    
-  },
+	{
+		path: "/",
+		element: <RootLayout />,
+		children: [
+			{
+				path: "/",
+				element: <Home />,
+			},
+		],
+	},
 ];
 
 export default routes;
